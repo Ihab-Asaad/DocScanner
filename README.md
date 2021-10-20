@@ -1,7 +1,7 @@
 # DocScanner
-Extract text from .pdf files or from images contain document.
+Extract text from .pdf files or from images containing documents.
 # Description:
-Create a command-line tool to extract text from images contain documents or from .pdf files.
+Create a command-line tool to extract text from images containing documents or from .pdf files.
 # Input:
 Documents in images or .pdf files must contain English only(for now). Supported fomats:
 -	PNG
