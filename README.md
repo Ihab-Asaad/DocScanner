@@ -16,5 +16,7 @@ Where:
 -	Output : output text file
 -	Verbose: verbose mode (output detailed logs)
 # INSTALLATION:
-- see https://pypi.org/project/pytesseract/ to install Tesseract-OCR from Prerequisites, or directly from https://tesseract-ocr.github.io/tessdoc/Compiling.html. For example, if using Linux, run the following command : **sudo apt install tesseract-ocr** To install Tesseract 4.x
+- See https://pypi.org/project/pytesseract/ to install Tesseract-OCR from Prerequisites, or directly from https://tesseract-ocr.github.io/tessdoc/Compiling.html. For example, if using Linux, run the following command : **sudo apt install tesseract-ocr** To install Tesseract 4.x
 -	To install and setup the dependencies, run:  **pip install -r requirements.txt**
+# Example:
+- 'inputImg.jpg' is an input image example captured from phone, and 'extractedText.txt' is an output text extracted.
