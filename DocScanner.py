@@ -2,34 +2,18 @@ import cv2
 from matplotlib.cbook import maxdict
 import numpy as np
 
-# widthImg = 640
-# heightImg = 480
-
 widthImg = 640
 heightImg = 640
 
-frameWidth = 640
-frameHeight = 480
-
-path = r'H:\AIS\Computer Vision\DocScanner\scanImg.jpg'
-
-## to capture from camera
-# cap = cv2.VideoCapture(0)
-# cap.set(3, widthImg)
-# cap.set(4,heightImg)
-# cap.set(10,150) # Brightness of the image
-
-
 def simplify_contour(contour, n_corners=4):
-    '''
+    """
     Binary searches best `epsilon` value to force contour 
         approximation contain exactly `n_corners` points.
-
     :param contour: OpenCV2 contour.
     :param n_corners: Number of corners (points) the contour must contain.
 
     :returns: Simplified contour in successful case. Otherwise returns initial contour.
-    '''
+    """
     n_iter, max_iter = 0, 50
     lb, ub = 0., 1.
 
