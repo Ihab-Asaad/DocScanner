@@ -10,7 +10,7 @@ Documents in images or .pdf files must contain English only(for now). Supported 
 # Output:
 Extracted text as a text file.
 # Interface:
-**Python main.py --input=./scanImg.jpg --output=output.txt --verbose** , 
+**Python main.py --input=./inputImg.jpg --output=extractedText.txt --verbose** , 
 Where:
 -	Input : input file
 -	Output : output text file
