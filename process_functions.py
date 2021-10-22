@@ -70,13 +70,14 @@ def match_template(image, template):
 
 # Equalizaiton histogram:
 def equalize_hist(gray):
-    clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    #clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
+    clahe = cv2.createCLAHE(clipLimit=1.0, tileGridSize=(4, 4))
     equalized = clahe.apply(gray)
     # equalized = cv2.equalizeHist(gray)
     return equalized
 
 
 def sharping(image):
-    gaussian_filter = cv2.GaussianBlur(image, (0, 0), 2.0)
+    gaussian_filter = cv2.GaussianBlur(image, (3, 3), 0.5, 0.5)
     sharp_image = cv2.addWeighted(image, 1.5, gaussian_filter, -0.5, 0)
     return sharp_image

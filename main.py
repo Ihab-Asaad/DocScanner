@@ -78,6 +78,21 @@ def check_input_path(input):
         return 3
 
 
+def get_boxes(img):
+    hImg, wImg = img.shape
+    img_box = img.copy()
+    boxes = pytesseract.image_to_data(img_box)
+    for a, b in enumerate(boxes.splitlines()):
+        if a != 0:
+            b = b.split()
+            if len(b) == 12:
+                x, y, w, h = int(b[6]), int(b[7]), int(b[8]), int(b[9])
+                cv2.putText(img_box, b[11], (x, y - 5),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.5, (50, 50, 255), 2)
+                cv2.rectangle(img_box, (x, y), (x + w, y + h), (50, 50, 255),
+                              2)
+
+
 def pre_process(input, file_type):
     """"
     Preprocessing Image:
@@ -92,7 +107,8 @@ def pre_process(input, file_type):
     # read and resize:
     if (file_type < 2):
         img = crop_doc(input)
-        imgs.append(resize_image(img, basewidth))
+        # imgs.append(resize_image(img, basewidth))
+        imgs.append(img)
         # imgs.append(resize_image(cv2.imread(input, -1), basewidth))
     else:
         imgs = [
